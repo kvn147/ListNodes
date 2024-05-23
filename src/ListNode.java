@@ -1,22 +1,22 @@
 import java.util.*;
 
-public class ListNode {
+public class ListNode<E> {
     // Linked List fields for singly-linked nodes
-    public int data;
-    public ListNode next; //pointer
+    public E data;
+    public ListNode<E> next; //pointer
 
     public ListNode() {
         // look for a constructor in this class
-        this(0, null);
+        this(null, null);
     }
 
     // parameterized constructor
-    public ListNode(int data) {
+    public ListNode(E data) {
         this(data, null);
     }
 
     // parameterize constructor
-    public ListNode(int data, ListNode next) {
+    public ListNode(E data, ListNode<E> next) {
         this.data = data;
         this.next = next;
     }
@@ -44,15 +44,15 @@ public class ListNode {
 //
 //        System.out.println("Linked List: " + list2);
 
-        ListNode three = new ListNode(3, null); // null pointer
-        ListNode two = new ListNode(2, three);
-        ListNode one = new ListNode(1, two);
+        ListNode<Integer> three = new ListNode<>(3, null); // null pointer
+        ListNode<Integer> two = new ListNode<>(2, three);
+        ListNode<Integer> one = new ListNode<>(1, two);
 
         // or
 
 //      ListNode one = new ListNode(1, new ListNode(2, new ListNode(3)));
 
-        ListNode current = one;
+        ListNode<Integer> current = one;
 
         // visit every node in the linked list and print out the data stored in the node
         while (current != null) {
